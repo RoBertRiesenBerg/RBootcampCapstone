@@ -24,7 +24,9 @@ library(broom)
 library(Boruta)
 library(tidyverse)
 
-load("C:/R Bootcamp/Ratemaking Capstone/reshaped_data.Rdata")
+DirectoryPath <- getwd()
+pol_final <- read_csv(file.path(DirectoryPath ,'pol_final.csv'))
+claims_final <- read_csv(file.path(DirectoryPath ,'claims_final.csv'))
 
 ```
 
