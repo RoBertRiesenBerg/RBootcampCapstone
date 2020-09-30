@@ -304,7 +304,7 @@ pol_final_with_levs %>%
   kable_classic(full_width = F, html_font = "Cambria")
 
 ```
-
+Can see that Structural Engineering has the highest pure premiums while Landscape Architecture has the lowest. Can also see that there isn't much difference by limit for the pure premiums.
 
 ```{r include = FALSE}
 ## Scratch work
