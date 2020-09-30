@@ -24,7 +24,6 @@ library(broom)
 library(Boruta)
 library(tidyverse)
 
-
 DirectoryPath <- getwd()
 pol_final <- read_csv(file.path(DirectoryPath ,'pol_final.csv'))
 claims_final <- read_csv(file.path(DirectoryPath ,'claims_final.csv'))
