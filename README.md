@@ -1,4 +1,4 @@
-# RBootcampCapstone
+# R Bootcamp Capstone
 
 This repository is used to track the code used pricing challenge in the R Bootcamp course with the CAS. Down the road, will look to add and complete the Reserving project as well.
 
