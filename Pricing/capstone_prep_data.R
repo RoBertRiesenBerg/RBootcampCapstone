@@ -29,17 +29,17 @@
 #' I'll use `tidyverse` package because it automatically loads `dplyr` and `tidyr`.
 #' I'll need `tidyr` to "reshape" or "spread" the `pol_rating` data object.
 #' The capstone project ZIP also came with *resources.R* so let's `source` that, too.
-
+DirectoryPath <- getwd()
 library(tidyverse)
-source('C:/R Bootcamp/Ratemaking Capstone/resources.R')
+source(file.path(DirectoryPath ,'resources.R'))
 
 #' ## Load the four data files to memory
 
-claims <- read_csv("C:/R Bootcamp/Ratemaking Capstone/claims.csv" ,guess_max = 15000)
+claims <- read_csv(file.path(DirectoryPath ,'claims.csv') ,guess_max = 15000)
 
-pol_dates <- read_csv("C:/R Bootcamp/Ratemaking Capstone/pol_dates.csv" ,guess_max = 15000)
+pol_dates <- read_csv(file.path(DirectoryPath ,'pol_dates.csv') ,guess_max = 15000)
 
-pol_rating <- read_csv("C:/R Bootcamp/Ratemaking Capstone/pol_rating.csv" ,guess_max = 150000)
+pol_rating <- read_csv(file.path(DirectoryPath ,'pol_rating.csv') ,guess_max = 150000)
 
 #' `read_csv` is reading `value` column as double.
 #' But, that means we are losing all character data.
@@ -50,7 +50,7 @@ pol_rating <- read_csv("C:/R Bootcamp/Ratemaking Capstone/pol_rating.csv" ,guess
 #   "ratemaking-capstone/pol_rating.csv",
 #   col_types = 'dccc')
 
-state_lookup <- read_csv('C:/R Bootcamp/Ratemaking Capstone/states.csv')
+state_lookup <- read_csv(file.path(DirectoryPath ,'states.csv'))
 
 #' This is what the four data frames look like.
 
@@ -280,6 +280,9 @@ length(unique(pol$policy_number))
 #   '.RData')
 # print(fname)
 # save(pol_final, claims_final, file = fname)
-save(pol_final, claims_final, file = 'C:/R Bootcamp/Ratemaking Capstone/reshaped_data.Rdata')
+# save(pol_final, claims_final, file = file.path(DirectoryPath ,'reshaped_data.Rdata'))
+
+write_csv(pol_final ,path = file.path(DirectoryPath ,'pol_final.csv'))
+write_csv(claims_final ,path = file.path(DirectoryPath ,'claims_final.csv'))
 
 
